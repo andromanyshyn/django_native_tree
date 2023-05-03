@@ -1,35 +1,35 @@
-# Тестовое задание на позицию Junior Python Developer
+# Test Assignment for the Junior Python Developer Position
 
-## Часть No1 (обязательная):
-Создайте веб страницу, которая будет выводить иерархию сотрудников в
-древовидной форме.
+## Part 1 (mandatory):
+Create a web page that displays a hierarchy of employees in
+in a tree-like form.
 
-● Информация о каждом сотруднике должна храниться в базе данных и
-содержать следующие данные:
+● Information about each employee should be stored in a database and
+contain the following data:
 
-○ ФИО;
+○ FULL NAME;
 
-○ Должность;
+○ Job Title;
 
-○ Дата приема на работу;
+○ Date of employment;
 
-○ Размер заработной платы;
+○ Salary;
 
-● У каждого сотрудника есть 1 начальник;
+● Each employee has one supervisor;
 
-● База данных должна содержать не менее 50 000 сотрудников и 5 уровней
+● The database must contain at least 50,000 employees and 5 levels
 
-иерархий.
+hierarchies.
 
-● Не забудьте отобразить должность сотрудника.
+● Do not forget to display the position of the employee.
 
-## Часть No2 (опциональная).
+## Part 2 (optional).
 
-1. Создайте базу данных используя миграции Django / Flask.
+1. Create a database using Django / Flask migrations.
 
-2. Создайте еще одну страницу и выведите на ней список сотрудников со всей
-имеющейся о сотруднике информацией из базы данных и возможностью
-сортировать по любому полю.
+2. Create another page and display the list of employees with all
+information about the employee from the database and the ability to
+to sort by any field.
 
-3. Добавьте возможность поиска сотрудников по любому полю для страницы
-созданной в задаче 2.
+3. Add the ability to search for employees by any field for the page
+created in task 2.
