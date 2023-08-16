@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+from environs import Env
+env = Env()
+env.read_env(override=True)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--#0f(a1&@nx8as#9^yp0!yh*9)z*2c5)6&8ebv6d74$w7-!xy)'
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", [], subcast=str)
 
 
 # Application definition
@@ -79,11 +81,11 @@ WSGI_APPLICATION = 'workers.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'workers_db',
-        'USER': 'postgres',
-        'PASSWORD': '9517535',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env.int("DB_PASSWORD"),
+        'HOST': env("DB_HOST"),
+        'PORT': env.int("DB_PORT"),
     }
 }
 
